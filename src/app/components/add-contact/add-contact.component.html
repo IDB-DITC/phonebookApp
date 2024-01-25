@@ -1,0 +1,30 @@
+<div>
+    <div class="submit-form">
+        @if (!submitted) {
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="name"
+                   required
+                   [(ngModel)]="contact.name"
+                   name="name" />
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input class="form-control"
+                   id="address"
+                   required
+                   [(ngModel)]="contact.address"
+                   name="address" />
+        </div>
+
+        <button (click)="saveContact()" class="btn btn-success">Submit</button>
+        }
+        @else {
+        <h4>Contact was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newContact()">Add</button>
+        }
+    </div>
+</div>
